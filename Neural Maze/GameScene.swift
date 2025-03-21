@@ -9,7 +9,7 @@ class GameScene: SKScene {
     var maze: [[Int]] = []
     var player: SKShapeNode!
     var exit: SKShapeNode!
-    var bannerView: GADBannerView!
+    var bannerView: BannerView!
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -103,10 +103,10 @@ class GameScene: SKScene {
     }
     
     func setupGoogleAds() {
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView = BannerView(adSize: AdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx" // Replace with actual AdMob ID
         bannerView.rootViewController = self.view?.window?.rootViewController
-        bannerView.load(GADRequest())
+        bannerView.load(Request())
         bannerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
         self.view?.addSubview(bannerView)
     }
