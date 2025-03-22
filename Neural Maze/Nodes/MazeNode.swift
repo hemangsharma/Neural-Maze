@@ -8,13 +8,11 @@
 import SpriteKit
 
 class MazeNode: SKNode {
-    // MARK: - Properties
     var maze: [[Int]] = []
     let numRows: Int
     let numCols: Int
     let cellSize: CGFloat
 
-    // MARK: - Initializer
     init(numRows: Int, numCols: Int, cellSize: CGFloat) {
         self.numRows = numRows
         self.numCols = numCols
@@ -28,7 +26,6 @@ class MazeNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Maze Generation
     func generateMaze() {
         maze = Array(repeating: Array(repeating: 1, count: numCols), count: numRows)
         carveMaze(x: 0, y: 0)
@@ -46,7 +43,6 @@ class MazeNode: SKNode {
         }
     }
 
-    // MARK: - Maze Rendering
     func drawMaze() {
         for row in 0..<numRows {
             for col in 0..<numCols {

@@ -8,7 +8,6 @@
 import SpriteKit
 
 class PlayerNode: SKShapeNode {
-    // MARK: - Initializer
     init(size: CGFloat) {
         super.init()
         self.path = CGPath(ellipseIn: CGRect(x: -size / 2, y: -size / 2, width: size, height: size), transform: nil)
@@ -20,9 +19,8 @@ class PlayerNode: SKShapeNode {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Movement
-    func move(to direction: CGPoint, duration: TimeInterval) {
-        let moveAction = SKAction.move(to: direction, duration: duration)
+    func move(to position: CGPoint, duration: TimeInterval) {
+        let moveAction = SKAction.move(to: position, duration: duration)
         self.run(moveAction)
     }
 }

@@ -6,13 +6,11 @@
 //
 
 class GameManager {
-    // MARK: - Properties
     static let shared = GameManager()
     var score: Int = 0
     var currentLevel: Int = 1
     var timeRemaining: Int = 60
 
-    // MARK: - Game State
     func resetGame() {
         score = 0
         currentLevel = 1
@@ -25,7 +23,7 @@ class GameManager {
 
     func nextLevel() {
         currentLevel += 1
-        timeRemaining += 10 // Add more time for the next level
+        timeRemaining += 10
     }
 
     func adjustDifficulty() -> (rows: Int, cols: Int) {

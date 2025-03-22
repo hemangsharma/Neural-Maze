@@ -8,36 +8,36 @@
 import SpriteKit
 
 class MenuScene: SKScene {
-    // MARK: - Lifecycle
     override func didMove(to view: SKView) {
         backgroundColor = .darkGray
         setupUI()
     }
 
-    // MARK: - UI Setup
     func setupUI() {
         let titleLabel = SKLabelNode(text: "Neural Maze")
-        titleLabel.fontName = "Avenir-Bold"
-        titleLabel.fontSize = 48
+        titleLabel.fontName = "PressStart2P" // Use a retro pixel font
+        titleLabel.fontSize = 36
+        titleLabel.fontColor = .white
         titleLabel.position = CGPoint(x: size.width / 2, y: size.height / 2 + 100)
         addChild(titleLabel)
 
         let startButton = SKLabelNode(text: "Start Game")
-        startButton.fontName = "Avenir-Bold"
-        startButton.fontSize = 32
+        startButton.fontName = "PressStart2P"
+        startButton.fontSize = 24
+        startButton.fontColor = .white
         startButton.position = CGPoint(x: size.width / 2, y: size.height / 2)
         startButton.name = "startButton"
         addChild(startButton)
 
         let instructionsButton = SKLabelNode(text: "Instructions")
-        instructionsButton.fontName = "Avenir-Bold"
-        instructionsButton.fontSize = 32
+        instructionsButton.fontName = "PressStart2P"
+        instructionsButton.fontSize = 24
+        instructionsButton.fontColor = .white
         instructionsButton.position = CGPoint(x: size.width / 2, y: size.height / 2 - 100)
         instructionsButton.name = "instructionsButton"
         addChild(instructionsButton)
     }
 
-    // MARK: - Touch Handling
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
